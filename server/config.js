@@ -43,7 +43,6 @@ export const config = {
 
     contacts: {
         phone1: '+7 952 353-45-45',
-        phone2: '+7 952 369-90-49',
         email: 'Pro100iBusines@gmail.com',
     },
 };
