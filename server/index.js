@@ -43,17 +43,21 @@ const serveStatic = (req, res, pathname) => {
 
 /* ---------- Утилиты ответа ---------- */
 
+// виджет ассистента Eva (<script> в index.html) грузится и работает с eva.bz
+const EVA_HOSTS = 'https://eva.bz https://*.eva.bz';
+
 const SECURITY_HEADERS = {
     'X-Content-Type-Options': 'nosniff',
     'X-Frame-Options': 'DENY',
     'Referrer-Policy': 'strict-origin-when-cross-origin',
     'Content-Security-Policy': [
         "default-src 'self'",
-        "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-        "font-src https://fonts.gstatic.com",
-        "img-src 'self' data:",
-        "script-src 'self'",
-        "connect-src 'self'",
+        `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${EVA_HOSTS}`,
+        `font-src https://fonts.gstatic.com ${EVA_HOSTS}`,
+        `img-src 'self' data: ${EVA_HOSTS}`,
+        `script-src 'self' ${EVA_HOSTS}`,
+        `connect-src 'self' ${EVA_HOSTS} wss://eva.bz wss://*.eva.bz`,
+        `frame-src ${EVA_HOSTS}`,
         "frame-ancestors 'none'",
     ].join('; '),
 };

@@ -1,0 +1,11 @@
+Options -Indexes
+DirectoryIndex index.html
+
+# сайт зовёт POST /api/lead — отдаём PHP-обработчик (хостинг без Node.js)
+RewriteEngine On
+RewriteRule ^api/lead/?$ api/lead.php [L]
+
+# настройки с токенами никогда не отдаём
+<FilesMatch "^lead-config.*\.php$">
+    Require all denied
+</FilesMatch>

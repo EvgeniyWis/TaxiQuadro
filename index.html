@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Такси и отдых — Сиверский, Гатчинский район</title>
     <meta name="api-base" content="">
-    <meta name="pay-url" content="">
+    <meta name="pay-url" content="https://b2b.cbrpay.ru/AS1C0003NAD516TS8O4RF7B1C4429LBT">
     <meta name="description" content="Такси по району и прокат квадроциклов, эндуро, сапов и велосипедов в Сиверском">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -668,34 +668,6 @@
     </div>
 </footer>
 
-<!-- ============ Eva: виджет и чат ============ -->
-<button class="eva" id="eva-open" type="button" aria-label="Открыть чат с Eva">
-    <span class="eva__avatar">E</span>
-    <span class="eva__text"><b>Eva · ассистент</b><small>Спросите что угодно →</small></span>
-</button>
-
-<section class="eva-chat" id="eva-chat" role="dialog" aria-label="Чат с Eva" aria-hidden="true" hidden>
-    <i class="modal__glow" style="--x:150px;--y:-150px;--w:400px;--h:300px;--c:rgba(169,114,255,.3)"></i>
-    <header class="eva-chat__head">
-        <span class="eva__avatar">E</span>
-        <div><b>Eva · ассистент</b><small><i></i>онлайн</small></div>
-        <button class="modal__close" type="button" data-eva-close aria-label="Закрыть чат">×</button>
-    </header>
-    <div class="eva-chat__log" id="eva-log">
-        <p class="msg msg--bot">Здравствуйте! Я Eva 👋 Помогу вызвать такси или выбрать маршрут. Что интересует?</p>
-        <div class="eva-chat__opts">
-            <button type="button" data-eva="taxi" data-ask="Хочу вызвать такси">🚕 Вызвать такси</button>
-            <button type="button" data-eva="levels" data-ask="Расскажите про квадро-маршруты">🏍 Квадро-маршруты</button>
-            <button type="button" data-eva="sup" data-ask="Расскажите про сплав на сапах">🏄 Сплав на сапах</button>
-            <button type="button" data-eva="drivers" data-ask="Хочу стать водителем">🚗 Стать водителем</button>
-        </div>
-    </div>
-    <form class="eva-chat__form" id="eva-form" autocomplete="off">
-        <input type="text" id="eva-input" placeholder="Напишите сообщение…" aria-label="Сообщение">
-        <button type="submit" aria-label="Отправить">↑</button>
-    </form>
-</section>
-
 <!-- ============ Оверлеи ============ -->
 <dialog class="modal modal--policy" id="modal-policy" aria-labelledby="policy-title">
     <i class="modal__glow" style="--x:400px;--y:-200px;--w:500px;--h:400px;--c:rgba(169,114,255,.25)"></i>
@@ -736,5 +708,7 @@
 </dialog>
 
 <script src="script.js"></script>
+<!-- Ассистент Eva (eva.bz) -->
+<script src="https://eva.bz/widget/chat-widget.js?widgetId=3aae01e5-276d-4a7a-9b81-f9b90882944f" type="text/javascript"></script>
 </body>
 </html>
