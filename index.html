@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Такси и отдых — Сиверский, Гатчинский район</title>
+    <meta name="api-base" content="">
+    <meta name="pay-url" content="">
+    <meta name="description" content="Такси по району и прокат квадроциклов, эндуро, сапов и велосипедов в Сиверском">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+    <script>document.documentElement.classList.add('js')</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ Шапка ============ -->
+<header class="header" id="header">
+    <a class="header__logo" href="#hero" aria-label="Pro100 Business — на главную">
+        <img src="img/logo.png" alt="Pro100 Business" width="123" height="44">
+    </a>
+    <nav class="header__nav" id="nav" aria-label="Основное меню">
+        <a href="#taxi">Такси</a>
+        <a href="#rest">Отдых</a>
+        <a href="#drivers">Водителям</a>
+        <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="header__actions">
+        <button class="btn btn--outline btn--header" type="button" data-open="pay">Оплатить</button>
+        <a class="header__social" href="https://t.me/pro100ibusiness" target="_blank" rel="noopener" aria-label="Telegram">TG</a>
+        <a class="header__social" href="https://vk.com/sapsplav" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a>
+        <a class="btn btn--outline btn--header btn--taxi" href="tel:+79523534545">Заказать такси</a>
+    </div>
+    <button class="header__burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span>
+    </button>
+</header>
+
+<main>
+
+<!-- ============ 00 · Первый экран ============ -->
+<section class="hero" id="hero">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-520px;--y:-520px;--w:1000px;--h:1000px;--c:rgba(59,114,153,.55);--b:130px"></i>
+        <i class="blob" style="--x:1080px;--y:520px;--w:760px;--h:760px;--c:rgba(154,79,181,.55);--b:120px"></i>
+        <i class="blob" style="--x:-260px;--y:700px;--w:560px;--h:460px;--c:rgba(125,63,168,.5);--b:100px"></i>
+    </div>
+
+    <div class="hero__stage">
+        <div class="hero__wheel" id="wheel" aria-hidden="true">
+            <img src="img/wheel.png" alt="" width="600" height="600">
+        </div>
+        <span class="chip chip--1" aria-hidden="true">Квадро</span>
+        <span class="chip chip--2" aria-hidden="true">Сапы</span>
+        <span class="chip chip--3" aria-hidden="true">Велики</span>
+        <span class="chip chip--4" aria-hidden="true">Такси</span>
+
+        <div class="hero__center">
+            <h1 class="hero__title grad-text">Такси <br class="show-m">и отдых</h1>
+            <p class="hero__sub grad-text">Сиверский · Гатчинский <span class="hide-m">район – едем и катаемся</span><span class="show-m">р-н</span></p>
+            <div class="hero__btns">
+                <a class="btn btn--primary" href="#taxi">Такси <span aria-hidden="true">↓</span></a>
+                <a class="btn btn--outline" href="#rest">Развлечения и отдых <span aria-hidden="true">↓</span></a>
+            </div>
+        </div>
+
+        <div class="hero__tagline">
+            <p class="hero__slogan">Ваш маршрут –<br>наш драйв</p>
+            <p class="hero__desc">Такси по району и прокат квадроциклов, эндуро,<br>сапов и велосипедов в Сиверском</p>
+        </div>
+        <p class="hero__tags">Такси <i>•</i> Квадро <i>•</i> Сапы</p>
+    </div>
+</section>
+
+<!-- ============ 01 · Такси в районе ============ -->
+<section class="sec sec--taxi" id="taxi" style="--pb:117px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-300px;--y:100px;--w:800px;--h:700px;--c:rgba(59,114,153,.45);--b:120px"></i>
+        <i class="blob" style="--x:900px;--y:500px;--w:800px;--h:700px;--c:rgba(125,63,168,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <div class="taxi">
+            <div class="taxi__left">
+                <div class="taxi__intro">
+                    <span class="label"><i class="label__dot"></i>Режим 1 · Такси</span>
+                    <h2 class="h2 h2--60">Такси <br class="show-m">по району</h2>
+                    <p class="lead lead--taxi">Сиверский и соседние посёлки – подаём машину быстро, <br class="hide-m">днём и ночью</p>
+                </div>
+                <article class="photo-card">
+                    <img src="img/taxi.png" alt="Такси на ночной дороге у Сиверского" loading="lazy">
+                    <div class="photo-card__text">
+                        <h3>Подача от 5 минут</h3>
+                        <p><span class="hide-m">Работаем 24/7 · фиксированная цена по району</span><span class="show-m">24/7 · фикс-цена по району</span></p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="map" aria-label="Карта зоны работы — Гатчинский район">
+                <img class="map__svg map__svg--river" src="img/map-river.svg" alt="">
+                <img class="map__svg map__svg--rail" src="img/map-rail.svg" alt="">
+                <img class="map__svg map__svg--road1" src="img/map-road1.svg" alt="">
+                <img class="map__svg map__svg--road2" src="img/map-road2.svg" alt="">
+                <img class="map__svg map__svg--road3" src="img/map-road3.svg" alt="">
+                <img class="map__svg map__svg--m-river" src="img/m-map-river.svg" alt="">
+                <img class="map__svg map__svg--m-rail" src="img/m-map-rail.svg" alt="">
+                <img class="map__svg map__svg--m-road" src="img/m-map-road.svg" alt="">
+
+                <span class="pt" style="--x:27.27%;--y:14.1%;--mx:20%;--my:20%">Вырица</span>
+                <span class="pt" style="--x:71.21%;--y:16.67%;--mx:68.57%;--my:20%">Суйда</span>
+                <span class="pt" style="--x:22.73%;--y:38.46%;--mx:11.43%;--my:42.5%">Кобралово</span>
+                <span class="pt" style="--x:75.76%;--y:34.62%;--mx:71.43%;--my:37.5%">Белогорка</span>
+                <span class="pt pt--desktop" style="--x:84.85%;--y:53.85%">Мины</span>
+                <span class="pt" style="--x:16.67%;--y:74.36%;--mx:8.57%;--my:75%">Рождествено</span>
+                <span class="pt" style="--x:65.15%;--y:82.05%;--mx:54.29%;--my:86.25%">Дружная Горка</span>
+
+                <div class="map__pin" aria-hidden="true">
+                    <span class="map__pulse"></span>
+                    <img class="map__pin-img" src="img/pin.svg" alt="">
+                    <img class="map__pin-img map__pin-img--m" src="img/m-pin.svg" alt="">
+                </div>
+                <span class="map__plate">Сиверский</span>
+
+                <span class="map__kicker">Где работаем</span>
+                <h3 class="map__title">Гатчинский район</h3>
+                <span class="map__tag map__tag--rail">ж/д</span>
+                <span class="map__tag map__tag--river">р. Оредеж</span>
+                <span class="map__note">* список посёлков – уточнить у клиента</span>
+            </div>
+        </div>
+
+        <ul class="pluses">
+            <li class="plus"><strong class="grad-text">5–10 мин</strong><span>подача машины по посёлку</span></li>
+            <li class="plus"><strong class="grad-text">24/7</strong><span>работаем без выходных и ночью</span></li>
+            <li class="plus"><strong class="grad-text">Фикс</strong><span>цена по району известна заранее</span></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ 02 · Приложение ============ -->
+<section class="sec sec--app" id="app" style="--pb:100px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:800px;--y:-200px;--w:800px;--h:700px;--c:rgba(59,114,153,.4);--b:120px"></i>
+        <i class="blob" style="--x:-200px;--y:500px;--w:700px;--h:600px;--c:rgba(154,79,181,.35);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:62px">
+            <span class="label"><i class="label__dot"></i>Приложение</span>
+            <h2 class="h2">Одно приложение – две роли</h2>
+            <p class="lead">Название <span class="hide-m">приложения </span>и ссылки <span class="hide-m">на сторы </span>– уточняются</p>
+        </header>
+
+        <div class="roles">
+            <article class="role role--passenger">
+                <i class="role__glow" style="--c:rgba(254,79,116,.25)"></i>
+                <span class="label"><i class="label__dot"></i>Пассажиру</span>
+                <h3 class="role__title">Такси<br>в 2 касания</h3>
+                <ul class="checks">
+                    <li>Машина на карте <span class="hide-m">в реальном времени</span><span class="show-m">онлайн</span></li>
+                    <li>Цена известна до поездки</li>
+                    <li><span class="hide-m">Оплата картой или наличными</span><span class="show-m">Карта или наличные</span></li>
+                </ul>
+                <div class="stores">
+                    <a class="store" href="#" aria-label="Скачать в RuStore"><i class="store__ico"></i><span><small>Скачать в</small>RuStore</span></a>
+                    <a class="store" href="#" aria-label="Скачать в App Store"><i class="store__ico"></i><span><small>Скачать в</small>App Store</span></a>
+                    <a class="store" href="#" aria-label="Скачать в Google Play"><i class="store__ico"></i><span><small>Скачать в</small>Google Play</span></a>
+                </div>
+                <div class="phone phone--passenger" aria-hidden="true">
+                    <i class="phone__blob phone__blob--a"></i><i class="phone__blob phone__blob--b"></i>
+                    <i class="phone__row" style="--t:69px"></i><i class="phone__row" style="--t:139px"></i><i class="phone__row" style="--t:208px"></i><i class="phone__row" style="--t:277px"></i><i class="phone__row" style="--t:347px"></i>
+                    <div class="phone__route"><img src="img/phone-route1.svg" alt=""><i class="phone__car"></i></div>
+                    <i class="phone__cam"></i>
+                    <div class="phone__sheet">
+                        <b>Куда едем?</b>
+                        <span class="phone__input">Сиверский, ж/д станция</span>
+                        <span class="phone__cta">Заказать · 250 ₽</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="role role--driver">
+                <i class="role__glow" style="--c:rgba(169,114,255,.3)"></i>
+                <span class="label"><i class="label__dot"></i>Водителю</span>
+                <h3 class="role__title">Заказы рядом<br>с домом</h3>
+                <ul class="checks">
+                    <li>Заказы по району<span class="hide-m"> – без пробок</span></li>
+                    <li>Выплаты каждый день</li>
+                    <li>Свой график</li>
+                </ul>
+                <div class="stores">
+                    <a class="btn btn--primary" href="#drivers">Стать водителем <span aria-hidden="true">↓</span></a>
+                </div>
+                <div class="phone phone--driver" aria-hidden="true">
+                    <i class="phone__blob phone__blob--a"></i><i class="phone__blob phone__blob--b"></i>
+                    <i class="phone__row" style="--t:69px"></i><i class="phone__row" style="--t:139px"></i><i class="phone__row" style="--t:208px"></i><i class="phone__row" style="--t:277px"></i><i class="phone__row" style="--t:347px"></i>
+                    <div class="phone__route"><img src="img/phone-route2.svg" alt=""><i class="phone__car"></i></div>
+                    <i class="phone__cam"></i>
+                    <div class="phone__sheet phone__sheet--order">
+                        <b>Новый заказ · 2,4 км</b>
+                        <span class="phone__sub">Белогорка → Сиверский</span>
+                        <strong class="grad-text">380 ₽</strong>
+                        <span class="phone__cta">Принять</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 03 · Набор водителей ============ -->
+<section class="sec sec--drivers" id="drivers" style="--pb:55px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-200px;--y:200px;--w:800px;--h:700px;--c:rgba(125,63,168,.4);--b:120px"></i>
+        <i class="blob" style="--x:900px;--y:-100px;--w:700px;--h:600px;--c:rgba(59,114,153,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:52px">
+            <span class="label"><i class="label__dot"></i>Водителям</span>
+            <h2 class="h2 h2--72">Ищем <br class="show-m">водителей</h2>
+            <p class="lead">Оставьте заявку – мы с вами свяжемся</p>
+        </header>
+
+        <div class="drivers">
+            <div class="drivers__left">
+                <article class="photo-card photo-card--driver">
+                    <img src="img/driver.png" alt="Водитель у своей машины" loading="lazy">
+                    <div class="photo-card__text"><h3>Работайте в своём районе</h3></div>
+                </article>
+                <ul class="conds">
+                    <li class="cond"><b class="grad-text">01</b><span>Свой авто или аренда у нас</span></li>
+                    <li class="cond"><b class="grad-text">02</b><span>Выплаты каждый день</span></li>
+                    <li class="cond"><b class="grad-text">03</b><span>Свободный график</span></li>
+                    <li class="cond"><b class="grad-text">04</b><span>Заказы рядом<span class="hide-m"> – без пробок</span></span></li>
+                </ul>
+                <p class="note">* условия – плейсхолдер, уточнить у клиента</p>
+            </div>
+
+            <form class="form-card form-card--driver" id="driver-form" novalidate>
+                <i class="form-card__glow" style="--c:rgba(254,79,116,.18)"></i>
+                <h3 class="form-card__title">Оставьте заявку</h3>
+                <p class="form-card__sub">Свяжемся с вами в ближайшее время</p>
+                <label class="field"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required></label>
+                <label class="field"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" data-mask="phone" required></label>
+                <label class="field"><span>Автомобиль</span><input type="text" name="car" placeholder="Марка, год (или «нужна аренда»)" data-placeholder-m="Марка, год или «аренда»"></label>
+                <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <button class="btn btn--primary btn--block" type="submit">Отправить заявку</button>
+                <p class="form-error" role="alert" hidden></p>
+                <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="#" data-open="policy">политикой обработки данных</a></p>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 04 · Выбор транспорта ============ -->
+<section class="sec sec--rest" id="rest" style="--pb:90px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-300px;--y:-100px;--w:900px;--h:700px;--c:rgba(59,114,153,.45);--b:120px"></i>
+        <i class="blob" style="--x:800px;--y:300px;--w:900px;--h:700px;--c:rgba(154,79,181,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:52px">
+            <span class="label"><i class="label__dot"></i>Режим 2 · Развлечения и отдых</span>
+            <h2 class="h2">Выберите свой транспорт</h2>
+            <p class="lead">Квадроциклы, эндуро, сапы и велосипеды</p>
+        </header>
+
+        <div class="transport">
+            <a class="tcard gborder" href="#levels">
+                <img src="img/quad.png" alt="" loading="lazy">
+                <span class="tcard__tag">3 уровня</span>
+                <div class="tcard__text">
+                    <h3>Квадроциклы</h3>
+                    <p>Дюны, Сталкер, Лес с препятствиями, VIP<br class="hide-m"> и экспедиция к водопаду</p>
+                </div>
+                <span class="tcard__arrow" aria-hidden="true"></span>
+            </a>
+            <a class="tcard gborder" href="#sup">
+                <img src="img/sup.png" alt="" loading="lazy">
+                <span class="tcard__tag">2 маршрута</span>
+                <div class="tcard__text">
+                    <h3>Сапы</h3>
+                    <p>Сплав по Оредежу<br>с трансфером от станции</p>
+                </div>
+                <span class="tcard__arrow" aria-hidden="true"></span>
+            </a>
+            <a class="tcard gborder" href="#more">
+                <img src="img/bike.png" alt="" loading="lazy">
+                <span class="tcard__tag">Прокат</span>
+                <div class="tcard__text">
+                    <h3>Велосипеды</h3>
+                    <p>Прокат в Сиверском</p>
+                </div>
+                <span class="tcard__arrow" aria-hidden="true"></span>
+            </a>
+            <a class="tcard gborder" href="#booking">
+                <img src="img/enduro.png" alt="" loading="lazy">
+                <span class="tcard__tag">Прокат</span>
+                <div class="tcard__text">
+                    <h3>Эндуро</h3>
+                    <p>Скорость и адреналин.<br>Инструктаж и экипировка</p>
+                </div>
+                <span class="tcard__arrow" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 05 · Квадро-маршруты ============ -->
+<section class="sec sec--levels" id="levels" style="--pb:55px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:900px;--y:-100px;--w:800px;--h:700px;--c:rgba(125,63,168,.45);--b:120px"></i>
+        <i class="blob" style="--x:-300px;--y:500px;--w:800px;--h:700px;--c:rgba(59,114,153,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:42px">
+            <span class="label"><i class="label__dot"></i>Квадроциклы</span>
+            <h2 class="h2">Выберите уровень</h2>
+            <p class="lead">Пять маршрутов – от лёгкой прогулки до экспедиции к водопаду. Инструктаж и экипировка перед стартом</p>
+        </header>
+
+        <div class="levels">
+            <article class="lvl">
+                <div class="lvl__card gborder">
+                    <div class="lvl__photo"><img src="img/level-dunes.png" alt="" loading="lazy"></div>
+                    <span class="tag">Уровень 1 · Лёгкий</span>
+                    <span class="badge">Пн–чт −20%</span>
+                    <div class="lvl__body">
+                        <h3 class="lvl__name">Дюны</h3>
+                        <div class="scale" aria-label="Сложность 1 из 3"><i class="on"></i><i></i><i></i></div>
+                        <p class="lvl__desc">Песчаная дорога в полях, без препятствий</p>
+                        <dl class="stats">
+                            <div><dt>Время</dt><dd>~45 мин</dd></div>
+                            <div><dt>Стоимость</dt><dd>6 000 ₽</dd></div>
+                        </dl>
+                        <button class="btn btn--primary btn--block" type="button" data-book="Квадроциклы">Забронировать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lvl">
+                <div class="lvl__card gborder">
+                    <div class="lvl__photo"><img src="img/level-stalker.png" alt="" loading="lazy"></div>
+                    <span class="tag">Уровень 2 · Средний</span>
+                    <div class="lvl__body">
+                        <h3 class="lvl__name">Сталкер</h3>
+                        <div class="scale" aria-label="Сложность 2 из 3"><i class="on"></i><i class="on"></i><i></i></div>
+                        <p class="lvl__desc">Заброшенная военная часть ВВС: взлётная полоса, старые ангары, лесная тропа и дюны. Без больших препятствий, подходит для семей</p>
+                        <dl class="stats">
+                            <div><dt>Время</dt><dd>~1,5 часа</dd></div>
+                            <div><dt>Стоимость</dt><dd>7 500 ₽</dd></div>
+                        </dl>
+                        <button class="btn btn--primary btn--block" type="button" data-book="Квадроциклы">Забронировать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lvl">
+                <div class="lvl__card gborder">
+                    <div class="lvl__photo"><img src="img/level-forest.png" alt="" loading="lazy"></div>
+                    <span class="tag">Уровень 3 · Сложный</span>
+                    <span class="badge">Пн–чт −20%</span>
+                    <div class="lvl__body">
+                        <h3 class="lvl__name lvl__name--sm">Лес с препятствиями</h3>
+                        <div class="scale" aria-label="Сложность 3 из 3"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                        <p class="lvl__desc">Заброшенный аэродром и густой лес: брёвна, грязевые лужи, завалы – живой off-road</p>
+                        <dl class="stats">
+                            <div><dt>Время</dt><dd>~1,5 часа</dd></div>
+                            <div><dt>Стоимость</dt><dd>9 500 ₽</dd></div>
+                        </dl>
+                        <button class="btn btn--primary btn--block" type="button" data-book="Квадроциклы">Забронировать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lvl lvl--wide">
+                <div class="lvl__card gborder">
+                    <div class="lvl__photo lvl__photo--triple">
+                        <img src="img/level-dunes.png" alt="" loading="lazy">
+                        <img src="img/level-stalker.png" alt="" loading="lazy">
+                        <img src="img/level-forest.png" alt="" loading="lazy">
+                    </div>
+                    <span class="tag">VIP · Все локации</span>
+                    <div class="lvl__body">
+                        <h3 class="lvl__name lvl__name--sm">VIP</h3>
+                        <div class="scale" aria-label="Максимальная сложность"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                        <p class="lvl__desc">Объединяет все локации: Дюны, Сталкер и Лес с&nbsp;препятствиями</p>
+                    </div>
+                    <div class="lvl__side">
+                        <dl class="stats stats--col">
+                            <div><dt>Время</dt><dd>уточняется</dd></div>
+                            <div><dt>Стоимость</dt><dd>уточняется</dd></div>
+                        </dl>
+                        <button class="btn btn--primary btn--block" type="button" data-book="Квадроциклы">Забронировать</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="lvl lvl--wide">
+                <div class="lvl__card gborder">
+                    <div class="lvl__photo"><img src="img/expedition.png" alt="" loading="lazy"></div>
+                    <span class="tag">Новый маршрут</span>
+                    <div class="lvl__body">
+                        <h3 class="lvl__name lvl__name--sm">Экспедиция по каньону к Маргариткиному водопаду</h3>
+                        <div class="scale" aria-label="Максимальная сложность"><i class="on"></i><i class="on"></i><i class="on"></i></div>
+                        <p class="lvl__desc">Описание уточняется</p>
+                    </div>
+                    <div class="lvl__side">
+                        <dl class="stats stats--col">
+                            <div><dt>Время</dt><dd>уточняется</dd></div>
+                            <div><dt>Стоимость</dt><dd>уточняется</dd></div>
+                        </dl>
+                        <button class="btn btn--primary btn--block" type="button" data-book="Квадроциклы">Забронировать</button>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <p class="note note--levels">* Бронь от 2 квадроциклов. От 3 шт.: Дюны 4 800 ₽ (пн–чт) / 5 500 ₽ (пт–вс), Сталкер 7 000 ₽ (пт–вс), Лес 9 000 ₽</p>
+    </div>
+</section>
+
+<!-- ============ 06 · Сапы ============ -->
+<section class="sec sec--sup" id="sup" style="--pb:35px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-200px;--y:0;--w:800px;--h:700px;--c:rgba(59,114,153,.5);--b:120px"></i>
+        <i class="blob" style="--x:900px;--y:400px;--w:800px;--h:700px;--c:rgba(154,79,181,.35);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:52px">
+            <span class="label"><i class="label__dot"></i>Сапы</span>
+            <h2 class="h2">Сплав по Оредежу</h2>
+            <p class="lead">Трансфер от ж/д станции Сиверский (встреча у отделения Почты России) до старта и обратно – <span class="hide-m">включен</span><span class="show-m">уже</span> в стоимость</p>
+        </header>
+
+        <div class="routes">
+            <article class="route">
+                <div class="route__photo"><img src="img/sup-route1.png" alt="" loading="lazy"></div>
+                <span class="label label--dark route__label"><i class="label__dot"></i>Маршрут 1 · 5,5 км</span>
+                <div class="route__body">
+                    <h3 class="route__name">До Белогорской ГЭС</h3>
+                    <p class="route__desc">Старт у Сиверской ГЭС,<br class="show-m"> финиш у Белогорской ГЭС</p>
+                    <div class="trail">
+                        <div class="trail__stop trail__stop--start"><i></i><b>Ст. Сиверский</b><small>у Почты России</small></div>
+                        <div class="trail__stop trail__stop--mid"><i></i><b>Старт</b><small>Сиверская ГЭС</small></div>
+                        <div class="trail__stop trail__stop--end"><i></i><b>Финиш</b><small>Белогорская ГЭС</small></div>
+                    </div>
+                    <dl class="stats stats--3">
+                        <div><dt>Длина</dt><dd>5,5 км</dd></div>
+                        <div><dt>Время</dt><dd>3–4 <span class="hide-m">часа</span><span class="show-m">ч</span></dd></div>
+                        <div><dt><span class="hide-m">Стоимость</span><span class="show-m">Цена</span></dt><dd>от 2 000 ₽</dd></div>
+                    </dl>
+                    <button class="btn btn--primary btn--block" type="button" data-book="Сапы">Забронировать</button>
+                </div>
+            </article>
+
+            <article class="route">
+                <div class="route__photo"><img src="img/sup.png" alt="" loading="lazy"></div>
+                <span class="label label--dark route__label"><i class="label__dot"></i>Маршрут 2 · 8,5 км</span>
+                <div class="route__body">
+                    <h3 class="route__name">До Комсомольской поляны</h3>
+                    <p class="route__desc">Старт у Сиверской ГЭС,<br class="show-m"> финиш на Комсомольской поляне</p>
+                    <div class="trail">
+                        <div class="trail__stop trail__stop--start"><i></i><b>Ст. Сиверский</b><small>у Почты России</small></div>
+                        <div class="trail__stop trail__stop--mid"><i></i><b>Старт</b><small>Сиверская ГЭС</small></div>
+                        <div class="trail__stop trail__stop--end"><i></i><b>Финиш</b><small>Комсомольская поляна</small></div>
+                    </div>
+                    <dl class="stats stats--3">
+                        <div><dt>Длина</dt><dd>8,5 км</dd></div>
+                        <div><dt>Время</dt><dd>5–6 <span class="hide-m">часов</span><span class="show-m">ч</span></dd></div>
+                        <div><dt><span class="hide-m">Стоимость</span><span class="show-m">Цена</span></dt><dd>3 500 ₽</dd></div>
+                    </dl>
+                    <button class="btn btn--primary btn--block" type="button" data-book="Сапы">Забронировать</button>
+                </div>
+            </article>
+        </div>
+        <p class="note note--sup">* маршрут 1: пн–чт 2 000 ₽, пт–вс 2 500 ₽</p>
+    </div>
+</section>
+
+<!-- ============ 07 · Велосипеды и сертификаты ============ -->
+<section class="sec sec--more" id="more" style="--pb:35px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:-200px;--y:100px;--w:800px;--h:600px;--c:rgba(154,79,181,.35);--b:120px"></i>
+        <i class="blob" style="--x:900px;--y:-100px;--w:800px;--h:600px;--c:rgba(59,114,153,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:62px">
+            <span class="label"><i class="label__dot"></i>Ещё</span>
+            <h2 class="h2">Велосипеды <br class="show-m">и подарки</h2>
+        </header>
+
+        <div class="more">
+            <article class="mcard mcard--bike">
+                <img class="mcard__bg" src="img/bike.png" alt="" loading="lazy">
+                <span class="label mcard__label"><i class="label__dot"></i>Прокат</span>
+                <div class="mcard__body">
+                    <h3>Прокат велосипедов</h3>
+                    <p>Прокат в Сиверском</p>
+                    <div class="prices">
+                        <span class="price">1 час · ___ ₽</span>
+                        <span class="price">День · ___ ₽</span>
+                    </div>
+                    <button class="btn btn--outline" type="button" data-book="Велосипеды">Забронировать</button>
+                </div>
+            </article>
+
+            <article class="mcard mcard--gift">
+                <i class="mcard__glow" style="--x:300px;--y:-100px;--w:500px;--h:400px;--c:rgba(254,79,116,.4)"></i>
+                <i class="mcard__glow" style="--x:-100px;--y:250px;--w:400px;--h:300px;--c:rgba(169,114,255,.4)"></i>
+                <img class="gift gift--bike" src="img/3d-bike.png" alt="" loading="lazy">
+                <img class="gift gift--sup" src="img/3d-sup.png" alt="" loading="lazy">
+                <img class="gift gift--quad" src="img/3d-quad.png" alt="" loading="lazy">
+                <span class="label mcard__label"><i class="label__dot"></i>Подарок</span>
+                <div class="mcard__body">
+                    <h3>Подарочный<br>сертификат</h3>
+                    <p>Подарок на активный отдых<br class="hide-m"> в Сиверском</p>
+                    <button class="btn btn--primary" type="button" data-book="Сертификат">Купить сертификат</button>
+                </div>
+            </article>
+        </div>
+        <p class="note note--more">* цены велосипедов и сертификатов – уточняются у клиента</p>
+    </div>
+</section>
+
+<!-- ============ 08 · Форма брони ============ -->
+<section class="sec sec--booking" id="booking" style="--pb:70px">
+    <div class="blobs" aria-hidden="true">
+        <i class="blob" style="--x:500px;--y:100px;--w:900px;--h:700px;--c:rgba(125,63,168,.45);--b:120px"></i>
+        <i class="blob" style="--x:-300px;--y:-100px;--w:700px;--h:600px;--c:rgba(59,114,153,.4);--b:120px"></i>
+    </div>
+    <div class="wrap">
+        <header class="sec-head" style="--hg:52px">
+            <span class="label"><i class="label__dot"></i>Бронь</span>
+            <h2 class="h2">Забронировать</h2>
+            <p class="lead">Свяжемся с вами, ответим на все вопросы, расскажем о действующих акциях и забронируем технику</p>
+        </header>
+
+        <form class="form-card form-card--booking" id="booking-form" novalidate>
+            <i class="form-card__glow" style="--c:rgba(254,79,116,.15)"></i>
+            <label class="field field--name"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required></label>
+            <label class="field field--phone"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" data-mask="phone" required></label>
+
+            <div class="counters" role="group" aria-labelledby="counters-label">
+                <span class="counters__label" id="counters-label">Что берём и сколько</span>
+                <div class="counter is-active" data-counter="Квадроциклы">
+                    <span class="counter__name">Квадроциклы</span>
+                    <button class="counter__btn counter__btn--minus" type="button" aria-label="Меньше: Квадроциклы">−</button>
+                    <output class="counter__val">2</output>
+                    <button class="counter__btn counter__btn--plus" type="button" aria-label="Больше: Квадроциклы">+</button>
+                </div>
+                <div class="counter" data-counter="Сапы">
+                    <span class="counter__name">Сапы</span>
+                    <button class="counter__btn counter__btn--minus" type="button" aria-label="Меньше: Сапы">−</button>
+                    <output class="counter__val">0</output>
+                    <button class="counter__btn counter__btn--plus" type="button" aria-label="Больше: Сапы">+</button>
+                </div>
+                <div class="counter" data-counter="Велосипеды">
+                    <span class="counter__name">Велосипеды</span>
+                    <button class="counter__btn counter__btn--minus" type="button" aria-label="Меньше: Велосипеды">−</button>
+                    <output class="counter__val">0</output>
+                    <button class="counter__btn counter__btn--plus" type="button" aria-label="Больше: Велосипеды">+</button>
+                </div>
+                <div class="counter" data-counter="Эндуро">
+                    <span class="counter__name">Эндуро</span>
+                    <button class="counter__btn counter__btn--minus" type="button" aria-label="Меньше: Эндуро">−</button>
+                    <output class="counter__val">0</output>
+                    <button class="counter__btn counter__btn--plus" type="button" aria-label="Больше: Эндуро">+</button>
+                </div>
+            </div>
+
+            <label class="field field--date"><span>Дата</span><input type="text" name="date" placeholder="дд.мм.гггг" inputmode="numeric" data-mask="date"></label>
+            <label class="field field--time"><span>Время</span><input type="text" name="time" placeholder="__:__" inputmode="numeric" data-mask="time"></label>
+
+            <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <button class="btn btn--primary btn--block form-card__submit" type="submit">Отправить заявку</button>
+            <p class="form-error" role="alert" hidden></p>
+            <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="#" data-open="policy">политикой обработки данных</a></p>
+        </form>
+
+        <aside class="pay-card" aria-label="Оплата по QR-коду">
+            <div class="pay-card__qr"><img src="img/qr.png" alt="QR-код для оплаты через СБП" width="172" height="172" loading="lazy"></div>
+            <div class="pay-card__text">
+                <span class="label"><i class="label__dot"></i>Оплата</span>
+                <h3>Оплата по QR-коду</h3>
+                <p>Отсканируйте QR-код в приложении своего банка <br class="hide-m">или нажмите «Оплатить онлайн» – оплата через СБП</p>
+            </div>
+            <a class="btn btn--primary pay-card__btn" href="#" data-open="pay">Оплатить онлайн</a>
+        </aside>
+    </div>
+</section>
+
+</main>
+
+<!-- ============ 09 · Подвал ============ -->
+<footer class="footer" id="contacts">
+    <div class="wrap footer__grid">
+        <div class="footer__brand">
+            <img src="img/logo.png" alt="Pro100 Business" width="123" height="44" loading="lazy">
+            <p>Такси и активный отдых<br class="hide-m"> в Сиверском</p>
+        </div>
+
+        <div class="footer__col footer__col--map">
+            <h4>Где нас найти</h4>
+            <a class="point" href="https://yandex.ru/maps/" target="_blank" rel="noopener">
+                <img src="img/minimap1.svg" alt="" width="128" height="128">
+                <span><b>Сапы · Такси</b><small>у ж/д Сиверский,<br class="hide-m"> около Почты России</small><em>Яндекс Карты →</em></span>
+            </a>
+            <a class="point" href="https://yandex.ru/maps/" target="_blank" rel="noopener">
+                <img src="img/minimap2.svg" alt="" width="128" height="128">
+                <span><b>Квадро · Велосипеды</b><small>адрес – уточнить</small><em>Яндекс Карты →</em></span>
+            </a>
+        </div>
+
+        <div class="footer__col footer__col--phones">
+            <h4>Телефоны</h4>
+            <p><small>Звонок / WhatsApp</small><a href="tel:+79523534545">+7 952 353-45-45</a></p>
+            <p><small>Звонок / WhatsApp</small><a href="tel:+79523699049">+7 952 369-90-49</a></p>
+            <p class="footer__mail"><small>Почта</small><a href="mailto:Pro100iBusines@gmail.com">Pro100iBusines@gmail.com</a></p>
+        </div>
+
+        <div class="footer__col footer__col--social">
+            <h4>Мы в сетях</h4>
+            <a class="btn btn--outline" href="https://t.me/pro100ibusiness" target="_blank" rel="noopener">@pro100ibusiness</a>
+            <a class="btn btn--outline" href="https://t.me/Pro100iBusinessTEX" target="_blank" rel="noopener">@Pro100iBusinessTEX</a>
+            <a class="btn btn--outline" href="https://vk.com/sapsplav" target="_blank" rel="noopener">VK · sapsplav</a>
+            <a class="btn btn--outline" href="https://vk.com/pro100supsurf" target="_blank" rel="noopener">VK · pro100supsurf</a>
+        </div>
+    </div>
+    <div class="wrap footer__bottom">
+        <a href="#" data-open="policy">Политика обработки данных</a>
+        <span>© 2026 · Сиверский</span>
+    </div>
+</footer>
+
+<!-- ============ Eva: виджет и чат ============ -->
+<button class="eva" id="eva-open" type="button" aria-label="Открыть чат с Eva">
+    <span class="eva__avatar">E</span>
+    <span class="eva__text"><b>Eva · ассистент</b><small>Спросите что угодно →</small></span>
+</button>
+
+<section class="eva-chat" id="eva-chat" role="dialog" aria-label="Чат с Eva" aria-hidden="true" hidden>
+    <i class="modal__glow" style="--x:150px;--y:-150px;--w:400px;--h:300px;--c:rgba(169,114,255,.3)"></i>
+    <header class="eva-chat__head">
+        <span class="eva__avatar">E</span>
+        <div><b>Eva · ассистент</b><small><i></i>онлайн</small></div>
+        <button class="modal__close" type="button" data-eva-close aria-label="Закрыть чат">×</button>
+    </header>
+    <div class="eva-chat__log" id="eva-log">
+        <p class="msg msg--bot">Здравствуйте! Я Eva 👋 Помогу вызвать такси или выбрать маршрут. Что интересует?</p>
+        <div class="eva-chat__opts">
+            <button type="button" data-eva="taxi" data-ask="Хочу вызвать такси">🚕 Вызвать такси</button>
+            <button type="button" data-eva="levels" data-ask="Расскажите про квадро-маршруты">🏍 Квадро-маршруты</button>
+            <button type="button" data-eva="sup" data-ask="Расскажите про сплав на сапах">🏄 Сплав на сапах</button>
+            <button type="button" data-eva="drivers" data-ask="Хочу стать водителем">🚗 Стать водителем</button>
+        </div>
+    </div>
+    <form class="eva-chat__form" id="eva-form" autocomplete="off">
+        <input type="text" id="eva-input" placeholder="Напишите сообщение…" aria-label="Сообщение">
+        <button type="submit" aria-label="Отправить">↑</button>
+    </form>
+</section>
+
+<!-- ============ Оверлеи ============ -->
+<dialog class="modal modal--policy" id="modal-policy" aria-labelledby="policy-title">
+    <i class="modal__glow" style="--x:400px;--y:-200px;--w:500px;--h:400px;--c:rgba(169,114,255,.25)"></i>
+    <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+    <h3 class="modal__title" id="policy-title">Политика обработки<br>персональных данных</h3>
+    <div class="policy">
+        <h4>1. Общие положения</h4>
+        <p>Настоящая политика определяет порядок обработки персональных данных пользователей сайта. Текст – плейсхолдер, финальный документ предоставит клиент.</p>
+        <h4>2. Какие данные мы собираем</h4>
+        <p>Имя, номер телефона, сведения об автомобиле (для водителей), выбранная услуга, дата и время бронирования.</p>
+        <h4>3. Цели обработки</h4>
+        <p>Связь с вами по заявке, бронирование услуг, рассмотрение кандидатуры водителя.</p>
+        <h4>4. Передача данных</h4>
+        <p>Данные используются только для обработки заявки и не передаются третьим лицам, кроме случаев, предусмотренных законом.</p>
+        <h4>5. Срок хранения и отзыв согласия</h4>
+        <p>Вы можете отозвать согласие, написав нам или позвонив по телефону.</p>
+    </div>
+    <button class="btn btn--primary btn--block" type="button" data-close>Понятно</button>
+</dialog>
+
+<dialog class="modal modal--sent" id="modal-sent" aria-labelledby="sent-title">
+    <i class="modal__glow" style="--x:100px;--y:-150px;--w:400px;--h:300px;--c:rgba(254,79,116,.3)"></i>
+    <span class="modal__check" aria-hidden="true">✓</span>
+    <h3 class="modal__title modal__title--c" id="sent-title">Заявка отправлена!</h3>
+    <p class="modal__text">Мы получили вашу заявку<br>и скоро свяжемся с вами</p>
+    <button class="btn btn--primary btn--block" type="button" data-close>Отлично</button>
+</dialog>
+
+<dialog class="modal modal--pay" id="modal-pay" aria-labelledby="pay-title">
+    <i class="modal__glow" style="--x:100px;--y:-150px;--w:400px;--h:300px;--c:rgba(254,79,116,.3)"></i>
+    <h3 class="modal__title modal__title--c" id="pay-title">Оплата</h3>
+    <p class="modal__text modal__text--sub">Выберите удобный способ оплаты</p>
+    <div class="pay-card__qr pay-card__qr--modal"><img src="img/qr.png" alt="QR-код для оплаты через СБП" width="172" height="172"></div>
+    <p class="modal__text modal__text--qr">Отсканируйте QR-код в приложении своего банка</p>
+    <p class="modal__or">или</p>
+    <a class="btn btn--primary btn--block" id="pay-link" href="#" target="_blank" rel="noopener">Оплатить по ссылке</a>
+    <button class="btn btn--outline btn--block" type="button" data-close>Закрыть</button>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>
