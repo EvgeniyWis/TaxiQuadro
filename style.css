@@ -1108,7 +1108,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 .mcard--gift p { line-height: 1.4; margin-top: 16px; }
 .mcard .btn { margin-top: 20px; }
 .mcard--gift .btn { margin-top: 38px; margin-bottom: 3px; }
-.prices { display: flex; gap: 36px; margin-top: 20px; }
+.prices { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
 .price {
     padding: 10px 16px;
     border: 1px solid rgba(255, 255, 255, .2);
@@ -1742,7 +1742,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     .gift--sup { left: 220px; right: auto; top: 22px; width: 112px; }
     .gift--bike { left: 25px; right: auto; top: 62px; width: 140px; }
     .gift--quad { left: 160px; right: auto; top: 160px; width: 150px; }
-    .prices { gap: 30px; }
+    .prices { gap: 8px; }
     .price { padding: 8px 14px; font-size: 12px; }
     .prices + .btn { margin-top: 12px; }
 
