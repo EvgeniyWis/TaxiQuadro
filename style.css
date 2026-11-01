@@ -233,6 +233,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     line-height: 1.2;
     transition: transform .2s, box-shadow .2s;
 }
+.header__social svg { width: 18px; height: 18px; fill: currentColor; }
 .header__social:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(255, 255, 255, .3); }
 .header__burger { display: none; }
 
@@ -1005,6 +1006,9 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 }
 .lvl__side .btn--block { width: 100%; }
 .note--levels { margin-top: 38px; }
+.note--levels2 { margin-top: 8px; }
+.note--levels, .note--sup, .note--more { font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, .6); }
+.note--sup + .note--sup, .note--more + .note--more { margin-top: 6px; }
 
 /* ---------- 06 · Сапы ---------- */
 .routes {
@@ -1055,6 +1059,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     mask: repeating-linear-gradient(90deg, #000 0 3px, transparent 3px 10px);
 }
 .trail__stop { position: relative; display: flex; flex-direction: column; gap: 0; }
+.trail--2 { grid-template-columns: repeat(2, 1fr); }
 .trail__stop--mid { align-items: center; text-align: center; }
 .trail__stop--end { align-items: flex-end; text-align: right; }
 .trail__stop i {
@@ -1135,6 +1140,14 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 .gift--sup  { left: 486px; top: 22px; width: 170px; }
 .gift--bike { left: 290px; top: 56px; width: 160px; }
 .note--more { margin-top: 20px; }
+.more--single { grid-template-columns: 1fr; }
+.more--single .mcard { height: 400px; padding: 40px 48px 40px; }
+.more--single .mcard--gift .btn { margin-bottom: 0; }
+@media (min-width: 1101px) {
+    .more--single .gift--bike { left: auto; right: 520px; top: 70px; width: 210px; }
+    .more--single .gift--sup  { left: auto; right: 320px; top: 24px; width: 190px; }
+    .more--single .gift--quad { left: auto; right: 50px; top: 90px; width: 280px; }
+}
 
 /* ---------- 08 · Бронь ---------- */
 .form-card--booking {
@@ -1287,6 +1300,23 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 .footer__col--social { display: flex; flex-direction: column; gap: 12px; }
 .footer__col--social h4 { margin-bottom: 0; }
 .footer__col--social .btn { width: 100%; height: 58px; padding: 0 20px; }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; }
+.social {
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    transition: background-color .25s, border-color .25s, transform .25s, box-shadow .25s;
+}
+.social svg { width: 24px; height: 24px; fill: #fff; }
+.social:hover {
+    transform: translateY(-3px);
+    border-color: transparent;
+    background: var(--grad);
+    box-shadow: 0 8px 24px rgba(169, 114, 255, .4);
+}
 .footer__bottom {
     position: relative;
     display: flex;
@@ -1712,7 +1742,8 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     .lvl--wide .lvl__side { margin: 0 24px 24px; padding-top: 20px; }
     .lvl--wide .lvl__desc { margin-top: 16px; }
     .lvl--wide .btn--block { margin-top: 0; }
-    .note--levels { margin-top: 18px; font-size: 11px; }
+    .note--levels { margin-top: 18px; font-size: 13px; }
+    .note--levels2 { margin-top: 6px; }
 
     /* 06 */
     .routes { gap: 16px; }
@@ -1728,17 +1759,19 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     .trail__stop--end small { max-width: 80px; }
     .route .stats { grid-template-columns: 105px 105px 1fr; margin-bottom: 20px; }
     .route .stats dd { font-size: 20px; white-space: nowrap; }
-    .note--sup { font-size: 11px; }
+    .note--sup, .note--more { font-size: 13px; }
+    .social { width: 52px; height: 52px; }
+    .social svg { width: 26px; height: 26px; }
 
     /* 07 */
     .more { gap: 16px; }
-    .mcard { height: 400px; padding: 24px 24px 24px; border-radius: 24px; }
+    .mcard, .more--single .mcard { height: 400px; padding: 24px 24px 24px; border-radius: 24px; }
     .mcard__label { left: 24px; top: 24px; }
     .mcard h3 { font-size: 28px; }
     .mcard h3 { font-size: 24px; }
     .mcard p { font-size: 14px; }
     .mcard .btn, .mcard--gift .btn { width: 100%; margin-top: 20px; margin-bottom: 0; }
-    .mcard--gift { height: 460px; }
+    .mcard--gift, .more--single .mcard--gift { height: 460px; }
     .gift--sup { left: 220px; right: auto; top: 22px; width: 112px; }
     .gift--bike { left: 25px; right: auto; top: 62px; width: 140px; }
     .gift--quad { left: 160px; right: auto; top: 160px; width: 150px; }
