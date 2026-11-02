@@ -4,6 +4,10 @@
     const $ = (sel, root = document) => root.querySelector(sel);
     const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
 
+    /* ---------- Скидка пн–чт: бейджи видны только в эти дни (по Москве) ---------- */
+    const mskDay = new Intl.DateTimeFormat('en-US', { timeZone: 'Europe/Moscow', weekday: 'short' }).format(new Date());
+    document.documentElement.classList.toggle('is-weekday', ['Mon', 'Tue', 'Wed', 'Thu'].includes(mskDay));
+
     /* ---------- Мобильное меню ---------- */
     const burger = $('#burger');
     const nav = $('#nav');

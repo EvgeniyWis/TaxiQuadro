@@ -73,6 +73,14 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     pointer-events: none;
     z-index: 0;
 }
+.sec .blobs {
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 240px, #000 calc(100% - 240px), transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 240px, #000 calc(100% - 240px), transparent 100%);
+}
+.hero .blobs {
+    -webkit-mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 240px), transparent 100%);
+    mask-image: linear-gradient(180deg, #000 0, #000 calc(100% - 240px), transparent 100%);
+}
 .blob {
     position: absolute;
     left: var(--x);
@@ -974,6 +982,14 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     text-transform: uppercase;
     white-space: nowrap;
 }
+/* бейдж скидки: показывается только в пн–чт (класс is-weekday ставит script.js) */
+.badge--day { display: none; }
+html.is-weekday .badge--day { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; border-radius: 16px; }
+.badge--day b { font-weight: 700; }
+.badge--day small { font-size: 10px; font-weight: 600; opacity: .9; }
+.lvl__photo .badge, .route__photo .badge { right: 20px; top: 20px; }
+.mcard > .badge { right: 32px; top: 32px; }
+
 .stats {
     display: grid;
     grid-template-columns: 172px 1fr;
@@ -1006,7 +1022,6 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 }
 .lvl__side .btn--block { width: 100%; }
 .note--levels { margin-top: 38px; }
-.note--levels2 { margin-top: 8px; }
 .note--levels, .note--sup, .note--more { font-size: 15px; line-height: 1.45; color: rgba(255, 255, 255, .6); }
 .note--sup + .note--sup, .note--more + .note--more { margin-top: 6px; }
 
@@ -1240,8 +1255,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 .footer {
     position: relative;
     padding-top: 80px;
-    background: var(--bg-dark);
-    border-top: 1px solid rgba(255, 255, 255, .1);
+    background: linear-gradient(180deg, var(--bg) 0, var(--bg-dark) 220px);
     scroll-margin-top: 0;
 }
 .footer__grid {
@@ -1535,6 +1549,14 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 
     /* Блобы: на мобильном — упрощённая подсветка */
     .blobs { display: none; }
+    .sec {
+        -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 56px, #000 calc(100% - 44px), transparent 100%);
+        mask-image: linear-gradient(180deg, transparent 0, #000 56px, #000 calc(100% - 44px), transparent 100%);
+    }
+    .hero {
+        -webkit-mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%);
+        mask-image: linear-gradient(180deg, #000 calc(100% - 44px), transparent 100%);
+    }
     .sec::before, .sec::after {
         content: "";
         position: absolute;
@@ -1743,7 +1765,6 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     .lvl--wide .lvl__desc { margin-top: 16px; }
     .lvl--wide .btn--block { margin-top: 0; }
     .note--levels { margin-top: 18px; font-size: 13px; }
-    .note--levels2 { margin-top: 6px; }
 
     /* 06 */
     .routes { gap: 16px; }
