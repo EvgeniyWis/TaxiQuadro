@@ -8,6 +8,9 @@ return [
     // Telegram: токен бота от @BotFather и id чатов (у групп id начинается с минуса)
     'telegram_token' => '',
     'telegram_chat_ids' => [],
+    // Если хостинг не достаёт до api.telegram.org (так на pro100ibusiness.ru), укажите адрес своего «моста»,
+    // который пересылает запросы /bot<token>/... в Telegram. Пусто — обычный https://api.telegram.org
+    'telegram_api' => '',
 
     // Почта: куда присылать заявки (пусто — не отправлять) и от чьего имени
     'mail_to' => '',

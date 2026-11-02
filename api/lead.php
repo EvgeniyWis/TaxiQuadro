@@ -107,31 +107,39 @@ function sendTelegram(array $cfg, array $lines): bool
 {
     $token = (string) ($cfg['telegram_token'] ?? '');
     $chats = array_filter((array) ($cfg['telegram_chat_ids'] ?? []));
-    if ($token === '' || !$chats) return false;
+    if ($token === '' || !$chats || !function_exists('curl_init')) return false;
+
+    // адрес API можно заменить на свой «мост», если хостинг не достаёт до api.telegram.org
+    $api = rtrim((string) ($cfg['telegram_api'] ?? ''), '/') ?: 'https://api.telegram.org';
 
     // заголовок жирным, остальное — с экранированием
     $esc = fn(string $s) => str_replace(['&', '<', '>'], ['&amp;', '&lt;', '&gt;'], $s);
-    $text = '<b>' . $esc(array_shift($lines)) . '</b>' . "\n" . implode("\n", array_map($esc, $lines));
+    $text = '<b>' . $esc(array_shift($lines)) . '</b>' . "
+" . implode("
+", array_map($esc, $lines));
 
     $delivered = false;
     foreach ($chats as $chat) {
-        $payload = json_encode([
-            'chat_id' => (string) $chat,
-            'text' => $text,
-            'parse_mode' => 'HTML',
-            'disable_web_page_preview' => true,
-        ], JSON_UNESCAPED_UNICODE);
-        $ctx = stream_context_create(['http' => [
-            'method' => 'POST',
-            'header' => "Content-Type: application/json\r\n",
-            'content' => $payload,
-            'timeout' => 10,
-            'ignore_errors' => true,
-        ]]);
-        $res = @file_get_contents("https://api.telegram.org/bot{$token}/sendMessage", false, $ctx);
+        $c = curl_init("{$api}/bot{$token}/sendMessage");
+        curl_setopt_array($c, [
+            CURLOPT_POST => true,
+            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_POSTFIELDS => json_encode([
+                'chat_id' => (string) $chat,
+                'text' => $text,
+                'parse_mode' => 'HTML',
+                'disable_web_page_preview' => true,
+            ], JSON_UNESCAPED_UNICODE),
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 3, // не задерживаем ответ клиенту, если Telegram недоступен
+            CURLOPT_TIMEOUT => 6,
+        ]);
+        $res = curl_exec($c);
+        $err = curl_error($c);
+        curl_close($c);
         $data = is_string($res) ? json_decode($res, true) : null;
         if (is_array($data) && !empty($data['ok'])) $delivered = true;
-        else error_log('lead.php: Telegram: ' . ($data['description'] ?? 'нет ответа'));
+        else error_log('lead.php: Telegram: ' . ($data['description'] ?? $err ?: 'нет ответа'));
     }
     return $delivered;
 }
@@ -169,8 +177,8 @@ foreach ([dirname(__DIR__, 3) . '/lead-config.php', __DIR__ . '/lead-config.php'
 }
 
 $lines = leadLines($lead);
-$ok = sendTelegram($cfg, $lines);
-$ok = sendMail($cfg, $lines) || $ok;
+$ok = sendMail($cfg, $lines);
+$ok = sendTelegram($cfg, $lines) || $ok;
 
 if (!$ok) respond(500, ['ok' => false, 'error' => 'send_failed']);
 respond(200, ['ok' => true]);
