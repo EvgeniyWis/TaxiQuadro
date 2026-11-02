@@ -9,3 +9,10 @@ RewriteRule ^api/lead/?$ api/lead.php [L]
 <FilesMatch "^lead-config.*\.php$">
     Require all denied
 </FilesMatch>
+
+# страница всегда проверяется заново, чтобы правки сайта были видны сразу
+<IfModule mod_headers.c>
+    <FilesMatch "\.html$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
