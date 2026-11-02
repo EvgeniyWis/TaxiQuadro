@@ -226,8 +226,8 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     font-size: 16px;
     line-height: 1.2;
 }
-.btn--taxi { width: 214px; margin-left: 12px; }
-.btn--header:first-child { margin-right: 22px; }
+.btn--taxi { width: 214px; margin-left: 18px; }
+.btn--header:first-child { margin-right: 18px; }
 .header__social {
     display: grid;
     place-items: center;
@@ -241,6 +241,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     line-height: 1.2;
     transition: transform .2s, box-shadow .2s;
 }
+.ico-vk { clip-path: circle(50%); }
 .header__social svg { width: 18px; height: 18px; fill: currentColor; }
 .header__social:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(255, 255, 255, .3); }
 .header__burger { display: none; }
