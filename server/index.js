@@ -45,6 +45,8 @@ const serveStatic = (req, res, pathname) => {
 
 // виджет ассистента Eva (<script> в index.html) грузится и работает с eva.bz
 const EVA_HOSTS = 'https://eva.bz https://*.eva.bz';
+// Яндекс Метрика (счётчик в index.html)
+const METRIKA_HOSTS = 'https://mc.yandex.ru https://mc.yandex.com https://yastatic.net';
 
 const SECURITY_HEADERS = {
     'X-Content-Type-Options': 'nosniff',
@@ -54,10 +56,11 @@ const SECURITY_HEADERS = {
         "default-src 'self'",
         `style-src 'self' 'unsafe-inline' https://fonts.googleapis.com ${EVA_HOSTS}`,
         `font-src https://fonts.gstatic.com ${EVA_HOSTS}`,
-        `img-src 'self' data: ${EVA_HOSTS}`,
-        `script-src 'self' ${EVA_HOSTS}`,
-        `connect-src 'self' ${EVA_HOSTS} wss://eva.bz wss://*.eva.bz`,
-        `frame-src ${EVA_HOSTS}`,
+        `img-src 'self' data: blob: ${EVA_HOSTS} ${METRIKA_HOSTS}`,
+        `script-src 'self' 'unsafe-inline' ${EVA_HOSTS} ${METRIKA_HOSTS}`,
+        `connect-src 'self' ${EVA_HOSTS} ${METRIKA_HOSTS} wss://eva.bz wss://*.eva.bz wss://mc.yandex.ru`,
+        `frame-src ${EVA_HOSTS} ${METRIKA_HOSTS}`,
+        "worker-src blob:",
         "frame-ancestors 'none'",
     ].join('; '),
 };
