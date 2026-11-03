@@ -11,6 +11,8 @@ return [
     // Если хостинг не достаёт до api.telegram.org (так на pro100ibusiness.ru), укажите адрес своего «моста»,
     // который пересылает запросы /bot<token>/... в Telegram. Пусто — обычный https://api.telegram.org
     'telegram_api' => '',
+    // Секретный ключ моста (должен совпадать с RELAY_KEY в Cloudflare Worker, см. tools/telegram-relay-worker.js)
+    'telegram_relay_key' => '',
 
     // Почта: куда присылать заявки (пусто — не отправлять) и от чьего имени
     'mail_to' => '',

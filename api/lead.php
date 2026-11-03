@@ -123,7 +123,10 @@ function sendTelegram(array $cfg, array $lines): bool
         $c = curl_init("{$api}/bot{$token}/sendMessage");
         curl_setopt_array($c, [
             CURLOPT_POST => true,
-            CURLOPT_HTTPHEADER => ['Content-Type: application/json'],
+            CURLOPT_HTTPHEADER => array_filter([
+                'Content-Type: application/json',
+                !empty($cfg['telegram_relay_key']) ? 'X-Relay-Key: ' . $cfg['telegram_relay_key'] : null,
+            ]),
             CURLOPT_POSTFIELDS => json_encode([
                 'chat_id' => (string) $chat,
                 'text' => $text,

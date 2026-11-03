@@ -34,6 +34,15 @@ npm test                 # 11 тестов с моками Telegram и OpenAI
 - `mail_to` — почта для заявок (сейчас Pro100iBusines@gmail.com; письма с хостинга могут попадать в «Спам»);
 - `telegram_token` и `telegram_chat_ids` — чтобы заявки шли ещё и в Telegram. **Хостинг pro100ibusiness.ru не достаёт до api.telegram.org** (соединение с ним блокируется сетью хостинга), поэтому пока заявки приходят только на почту. Чтобы заработал Telegram, нужен «мост»: свой адрес, пересылающий запросы в Telegram (`telegram_api` в конфиге), либо запуск `server/` на VPS, откуда Telegram доступен. Кнопки «Взять в работу» в этом варианте нет: она требует постоянно работающего бота (`server/`).
 
+## Telegram через Cloudflare (если хостинг не достаёт до Telegram)
+
+1. На cloudflare.com: **Workers & Pages → Create → Create Worker**, назвать, например, `pro100-tg`, **Deploy**, затем **Edit code**, вставить содержимое `tools/telegram-relay-worker.js`, **Deploy**.
+2. В **Settings → Variables and Secrets** добавить секрет `RELAY_KEY` — любая длинная случайная строка.
+3. Адрес Worker'а (`https://pro100-tg.<аккаунт>.workers.dev`) и этот же ключ вписать в `lead-config.php` на хостинге:
+   `telegram_api` и `telegram_relay_key`.
+
+Кнопки «Взять в работу» в таком варианте нет.
+
 ## Telegram-бот для заявок (Node-сервер)
 
 1. В Telegram откройте [@BotFather](https://t.me/BotFather) → `/newbot` → скопируйте токен в `TELEGRAM_BOT_TOKEN`.
