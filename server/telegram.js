@@ -21,6 +21,7 @@ const TITLES = {
     driver: '🚗 <b>Заявка · Водитель</b>',
     booking: '🏍 <b>Бронь · Развлечения и отдых</b>',
     eva: '💬 <b>Заявка из чата Eva</b>',
+    question: '❓ <b>Вопрос с сайта</b>',
 };
 
 /** Собирает текст сообщения о заявке (HTML для Telegram). */
@@ -30,6 +31,7 @@ export const formatLead = (lead) => {
     lines.push(`📞 <b>Телефон:</b> ${esc(lead.phone)}`);
 
     if (lead.type === 'driver' && lead.car) lines.push(`🚘 <b>Автомобиль:</b> ${esc(lead.car)}`);
+    if (lead.type === 'question') lines.push(`💬 <b>Вопрос:</b> ${esc(lead.message)}`);
 
     if (lead.type === 'booking') {
         const items = Object.entries(lead.items || {}).filter(([, n]) => n > 0);

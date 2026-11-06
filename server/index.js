@@ -80,7 +80,7 @@ const ITEM_NAMES = ['Квадроциклы', 'Сапы', 'Велосипеды'
 /** Приводит тело запроса к безопасной заявке или бросает HttpError(400). */
 export const parseLead = (body) => {
     const type = body.type;
-    if (type !== 'driver' && type !== 'booking') throw new HttpError(400, 'bad_type');
+    if (type !== 'driver' && type !== 'booking' && type !== 'question') throw new HttpError(400, 'bad_type');
 
     const name = clean(body.name, 60);
     if (name.length < 2) throw new HttpError(400, 'bad_name');
@@ -92,6 +92,9 @@ export const parseLead = (body) => {
 
     if (type === 'driver') {
         lead.car = clean(body.car, 100);
+    } else if (type === 'question') {
+        lead.message = clean(body.message, 500);
+        if (lead.message.length < 2) throw new HttpError(400, 'bad_message');
     } else {
         const items = {};
         for (const key of ITEM_NAMES) {

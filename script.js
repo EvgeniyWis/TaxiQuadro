@@ -205,6 +205,7 @@
 
     const LEAD_ERRORS = {
         bad_name: 'Укажите имя.',
+        bad_message: 'Напишите ваш вопрос.',
         bad_phone: 'Проверьте номер телефона.',
         bad_date: 'Дата указана неверно — формат дд.мм.гггг.',
         bad_time: 'Время указано неверно — формат чч:мм.',
@@ -217,7 +218,7 @@
     const validate = (form) => {
         let ok = true;
         $$('.field', form).forEach((field) => {
-            const input = $('input', field);
+            const input = $('input, textarea', field);
             if (!input || !input.required) return;
             const value = input.value.trim();
             const valid = input.name === 'phone' ? digits(value).length === 11 : value.length > 1;
@@ -248,10 +249,13 @@
                 items: Object.fromEntries(counters.map((c) => [c.dataset.counter, Number($('.counter__val', c).textContent)])),
             };
         }
+        if (form.id === 'question-form') {
+            return { type: 'question', name: f.name, phone: f.phone, message: f.message, website: f.website };
+        }
         return { type: 'driver', name: f.name, phone: f.phone, car: f.car, website: f.website };
     };
 
-    $$('form.form-card').forEach((form) => {
+    $$('form.form-card, form.lead-form').forEach((form) => {
         const submit = $('button[type="submit"]', form);
         const submitLabel = submit.textContent;
 
@@ -273,6 +277,7 @@
             try {
                 await postJson('/api/lead', buildLead(form));
                 form.reset();
+                form.closest('dialog')?.close();
                 if (form.id === 'booking-form') resetCounters();
                 openModal('sent');
             } catch (err) {

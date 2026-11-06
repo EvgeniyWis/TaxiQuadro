@@ -241,9 +241,10 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
 .header__social svg { width: 18px; height: 18px; fill: currentColor; }
 .header__social:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(255, 255, 255, .3); }
 .header__burger { display: none; }
+.header__nav-ask { display: none; }
 
 @media (min-width: 1300px) {
-    .header__nav { justify-content: flex-start; margin-left: 259px; }
+    .header__nav { justify-content: center; margin-left: 0; gap: 40px; }
 }
 
 /* ---------- 00 · Первый экран ---------- */
@@ -782,7 +783,7 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
     outline: 0;
     transition: border-color .2s, background .2s;
 }
-.field input::placeholder { color: rgba(255, 255, 255, .35); }
+.field input::placeholder, .field textarea::placeholder { color: rgba(255, 255, 255, .35); }
 .field input:focus {
     border: 1.5px solid transparent;
     padding: 0 19.5px;
@@ -790,7 +791,29 @@ button { cursor: pointer; background: none; border: 0; padding: 0; }
         linear-gradient(#1E1E21, #1E1E21) padding-box,
         var(--grad) border-box;
 }
-.field.is-invalid input { border-color: var(--pink); }
+.field.is-invalid input, .field.is-invalid textarea { border-color: var(--pink); }
+.field textarea {
+    width: 100%;
+    min-height: 110px;
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .05);
+    font: inherit;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    resize: vertical;
+    outline: 0;
+    transition: border-color .2s, background .2s;
+}
+.field textarea:focus {
+    border: 1.5px solid transparent;
+    padding: 15.5px 19.5px;
+    background:
+        linear-gradient(#1E1E21, #1E1E21) padding-box,
+        var(--grad) border-box;
+}
 .consent {
     margin-top: 23px;
     font-size: 12px;
@@ -1441,6 +1464,13 @@ html.is-weekday .badge--day { display: flex; flex-direction: column; align-items
 .modal--sent .modal__text { margin: 10px 0 40px; }
 .modal--sent .btn { margin: 0; }
 
+.modal--question { width: min(520px, calc(100vw - 32px)); padding: 40px 44px 34px; overflow-y: auto; }
+.modal--question .modal__close { position: absolute; right: 24px; top: 24px; width: 40px; height: 40px; }
+.modal--question .modal__title { padding-right: 52px; }
+.modal__text--left { margin-top: 8px; text-align: left; font-size: 15px; }
+.lead-form { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+.lead-form .btn--block { margin: 8px 0 0; }
+.lead-form .form-error, .lead-form .consent { margin-top: 0; }
 .modal--pay { width: min(480px, calc(100vw - 32px)); padding: 44px 48px 40px; }
 .modal--pay .modal__text--sub { margin-top: 8px; }
 .pay-card__qr--modal { margin: 28px auto 0; }
@@ -1600,10 +1630,11 @@ html.is-weekday .badge--day { display: flex; flex-direction: column; align-items
         grid-template-columns: auto 1fr auto;
     }
     .header__logo img { width: 99px; }
-    .header__actions { justify-content: flex-end; gap: 0; margin-right: 14px; }
-    .header__actions .header__social, .header__actions .btn--taxi { display: none; }
-    .btn--header { width: 112px; height: 36px; font-size: 14px; }
-    .btn--header:first-child { margin-right: 0; }
+    .header__actions { justify-content: flex-end; gap: 6px; margin-right: 12px; }
+    .header__actions .btn--header { display: none; } /* «Задать вопрос» живёт в выпадающем меню */
+    .header__social { width: 32px; height: 32px; }
+    .header__social svg { width: 17px; height: 17px; }
+    .header__nav-ask { display: block; }
     .header__burger {
         position: relative;
         display: block;
@@ -1837,4 +1868,13 @@ html.is-weekday .badge--day { display: flex; flex-direction: column; align-items
     .modal__title { font-size: 24px; padding-right: 48px; }
     .modal__title--c { padding: 0; }
     .modal--sent, .modal--pay { padding: 40px 24px 28px; }
+}
+
+/* очень узкие телефоны: значки в шапке помещаются рядом с логотипом */
+@media (max-width: 360px) {
+    .header { padding: 0 16px 0 20px; }
+    .header__logo img { width: 80px; }
+    .header__actions { gap: 4px; margin-right: 8px; }
+    .header__social { width: 28px; height: 28px; }
+    .header__social svg { width: 15px; height: 15px; }
 }

@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
     <script>document.documentElement.classList.add('js')</script>
-    <link rel="stylesheet" href="style.css?v=20261111">
+    <link rel="stylesheet" href="style.css?v=20261113">
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         window.dataLayer = window.dataLayer || [];
@@ -79,11 +79,13 @@
         <a href="#rest">Отдых</a>
         <a href="#drivers">Водителям</a>
         <a href="#contacts">Контакты</a>
+        <a class="header__nav-ask" href="#" data-open="question">Задать вопрос</a>
     </nav>
     <div class="header__actions">
-        <button class="btn btn--outline btn--header" type="button" data-open="pay">Оплатить</button>
+        <button class="btn btn--outline btn--header" type="button" data-open="question">Задать вопрос</button>
+        <a class="header__social" href="https://wa.me/79523534545" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg></a>
         <a class="header__social" href="https://t.me/Pro100iBusinessTEX" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tg"/></svg></a>
-        <a class="header__social" href="https://vk.com/pro100supsurf" target="_blank" rel="noopener" aria-label="ВКонтакте"><svg class="ico-vk" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-vk"/></svg></a>
+        <a class="header__social" href="https://max.ru/u/f9LHodD0cOKHpGN_AsedjTxmHsPbAOEHWVxrEw-yIhhW03j-MAHNk6CeKQg" target="_blank" rel="noopener" aria-label="MAX"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-max"/></svg></a>
         <a class="btn btn--outline btn--header btn--taxi" href="tel:+79633433636">Заказать такси</a>
     </div>
     <button class="header__burger" id="burger" type="button" aria-label="Меню" aria-expanded="false" aria-controls="nav">
@@ -813,6 +815,22 @@
     <button class="btn btn--primary btn--block" type="button" data-close>Отлично</button>
 </dialog>
 
+<dialog class="modal modal--question" id="modal-question" aria-labelledby="question-title">
+    <i class="modal__glow" style="--x:150px;--y:-150px;--w:400px;--h:300px;--c:rgba(254,79,116,.25)"></i>
+    <button class="modal__close" type="button" data-close aria-label="Закрыть">×</button>
+    <h3 class="modal__title" id="question-title">Задать вопрос</h3>
+    <p class="modal__text modal__text--left">Ответим в мессенджере или по телефону</p>
+    <form class="lead-form" id="question-form" novalidate>
+        <label class="field"><span>Имя</span><input type="text" name="name" placeholder="Как к вам обращаться" autocomplete="name" required></label>
+        <label class="field"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" inputmode="tel" data-mask="phone" required></label>
+        <label class="field"><span>Ваш вопрос</span><textarea name="message" rows="4" maxlength="500" placeholder="Что хотите узнать?" required></textarea></label>
+        <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <button class="btn btn--primary btn--block" type="submit">Отправить</button>
+        <p class="form-error" role="alert" hidden></p>
+        <p class="consent">Нажимая кнопку, вы соглашаетесь с <a href="#" data-open="policy">политикой обработки данных</a></p>
+    </form>
+</dialog>
+
 <dialog class="modal modal--pay" id="modal-pay" aria-labelledby="pay-title">
     <i class="modal__glow" style="--x:100px;--y:-150px;--w:400px;--h:300px;--c:rgba(254,79,116,.3)"></i>
     <h3 class="modal__title modal__title--c" id="pay-title">Оплата</h3>
@@ -824,7 +842,7 @@
     <button class="btn btn--outline btn--block" type="button" data-close>Закрыть</button>
 </dialog>
 
-<script src="script.js?v=20261111"></script>
+<script src="script.js?v=20261113"></script>
 <!-- Ассистент Eva (eva.bz) -->
 <script src="https://eva.bz/widget/chat-widget.js?widgetId=3aae01e5-276d-4a7a-9b81-f9b90882944f" type="text/javascript"></script>
 </body>

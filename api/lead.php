@@ -51,7 +51,7 @@ function allowRequest(string $ip, int $limit = 6, int $window = 600): bool
 function parseLead(array $body): array
 {
     $type = $body['type'] ?? '';
-    if ($type !== 'driver' && $type !== 'booking') respond(400, ['ok' => false, 'error' => 'bad_type']);
+    if (!in_array($type, ['driver', 'booking', 'question'], true)) respond(400, ['ok' => false, 'error' => 'bad_type']);
 
     $name = clean($body['name'] ?? null, 60);
     if (mb_strlen($name) < 2) respond(400, ['ok' => false, 'error' => 'bad_name']);
@@ -63,6 +63,13 @@ function parseLead(array $body): array
 
     if ($type === 'driver') {
         $lead['car'] = clean($body['car'] ?? null, 100);
+        return $lead;
+    }
+
+    if ($type === 'question') {
+        $message = clean($body['message'] ?? null, 500);
+        if (mb_strlen($message) < 2) respond(400, ['ok' => false, 'error' => 'bad_message']);
+        $lead['message'] = $message;
         return $lead;
     }
 
@@ -84,8 +91,10 @@ function parseLead(array $body): array
 /** Текст заявки: строки без разметки; для Telegram потом экранируется. */
 function leadLines(array $lead): array
 {
-    $titles = ['driver' => '🚗 Заявка · Водитель', 'booking' => '🏍 Бронь · Развлечения и отдых'];
+    $titles = ['driver' => '🚗 Заявка · Водитель', 'booking' => '🏍 Бронь · Развлечения и отдых', 'question' => '❓ Вопрос с сайта'];
     $lines = [$titles[$lead['type']], '', '👤 Имя: ' . $lead['name'], '📞 Телефон: ' . $lead['phone']];
+
+    if ($lead['type'] === 'question') $lines[] = '💬 Вопрос: ' . $lead['message'];
 
     if ($lead['type'] === 'driver' && $lead['car'] !== '') $lines[] = '🚘 Автомобиль: ' . $lead['car'];
 
